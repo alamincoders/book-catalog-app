@@ -1,20 +1,7 @@
-import { useGetAllBooksQuery } from '../redux/features/books/bookApi';
+import Hero from '../components/screen/Hero';
 
 function App() {
-  const { data, isLoading } = useGetAllBooksQuery([]);
-  return (
-    <>
-      {isLoading ? (
-        <h1 className="text-3xl font-bold underline">Loading...</h1>
-      ) : (
-        <div>
-          {data.map((user: any) => (
-            <li key={user.id}> {user.name}</li>
-          ))}
-        </div>
-      )}
-    </>
-  );
+  return <Hero />;
 }
 
 export default App;
