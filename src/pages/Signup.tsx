@@ -101,18 +101,21 @@ const Signup = () => {
                 </a>
               </li>
             </ul>
+
             <Link
               to="/terms"
               className="mb-2 inline-block text-base text-[#adadad] hover:text-violet-600 hover:underline"
             >
               Terms & Condition
             </Link>
+
             <p className="text-base text-[#adadad]">
               Already have an account?
               <Link to="/login" className="text-violet-600 hover:underline">
                 Sign In
               </Link>
             </p>
+
             <div>
               <span className="absolute top-1 right-1">
                 <svg
