@@ -58,6 +58,7 @@ const Login = () => {
                   </svg>
                 </a>
               </li>
+
               <li className="w-full px-2">
                 <a
                   href="/#"
@@ -77,6 +78,7 @@ const Login = () => {
                   </svg>
                 </a>
               </li>
+
               <li className="w-full px-2">
                 <a
                   href="/#"
@@ -103,12 +105,14 @@ const Login = () => {
             >
               Forget Password?
             </a>
+
             <p className="text-base text-[#adadad]">
               Not a member yet?
               <Link to="/signup" className="text-violet-600 hover:underline">
                 Sign Up
               </Link>
             </p>
+
             <div>
               <span className="absolute top-1 right-1">
                 <svg
