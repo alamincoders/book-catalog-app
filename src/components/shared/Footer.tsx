@@ -27,8 +27,9 @@ const Footer = () => {
                   />
                 </a>
                 <p className="text-base mb-7 text-body-color">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dignissimos corporis at impedit, eos accusamus unde.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellat ducimus reiciendis porro modi. Mollitia consectetur
+                  nulla aut inventore cumque iure!
                 </p>
                 <p className="flex items-center text-sm font-medium text-black">
                   <span className="mr-3 text-violet-600">
