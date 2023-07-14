@@ -26,9 +26,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between w-full px-4">
             <div>
               <button
-                // @click="navbarOpen = !navbarOpen"
                 onClick={() => setOpen(!open)}
-                // :className="navbarOpen && 'navbarTogglerActive' "
                 id="navbarToggler"
                 className={` ${
                   open && 'navbarTogglerActive'
@@ -39,7 +37,6 @@ const Navbar = () => {
                 <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color"></span>
               </button>
               <nav
-                // :className="!navbarOpen && 'hidden' "
                 id="navbarCollapse"
                 className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
                   !open && 'hidden'
