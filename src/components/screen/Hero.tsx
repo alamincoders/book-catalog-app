@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import heroBooks from '../../assets/books/slider_top_2.png';
+import Container from '../ui/Container';
 
 interface ISingleImageProps {
   imgSrc: string;
@@ -9,31 +11,32 @@ const Hero = () => {
   return (
     <>
       <div className="relative bg-white pt-[120px] pb-[110px] lg:pt-[150px]">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4">
+        <Container>
+          <div className="flex flex-wrap -mx-4 lg:items-center">
             <div className="w-full px-4 lg:w-5/12">
               <div className="hero-content">
                 <h1 className="mb-3 text-4xl font-bold leading-snug text-dark sm:text-[42px] lg:text-[40px] xl:text-[42px]">
-                  Books Catalog App with Programming Hero
+                  Your Gateway to a World of Literary Adventures!
                 </h1>
                 <p className="mb-8 max-w-[480px] text-base text-body-color">
-                  With Programming Hero, business and students thrive together.
-                  Business can perfectly match their staffing to changing demand
-                  throughout the daybed.
+                  With Boake, you'll discover a vast collection of meticulously
+                  curated books, ranging from timeless classics to contemporary
+                  masterpieces, all conveniently organized and accessible in the
+                  palm of your hand.
                 </p>
                 <ul className="flex flex-wrap items-center">
                   <li>
-                    <a
-                      href="/#"
-                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-white rounded-lg bg-violet-600 hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
+                    <Link
+                      to="allbooks"
+                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-white rounded-lg bg-indigo-600 hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
                     >
-                      Get Started
-                    </a>
+                      All Books
+                    </Link>
                   </li>
                   <li>
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-body-color hover:text-violet-600 sm:px-10 lg:px-8 xl:px-10"
+                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-body-color hover:text-indigo-600 sm:px-10 lg:px-8 xl:px-10"
                     >
                       <span className="mr-2">
                         <svg
@@ -98,7 +101,7 @@ const Hero = () => {
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
                   <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png"
+                    src={heroBooks}
                     alt="hero"
                     className="max-w-full lg:ml-auto"
                   />
@@ -141,7 +144,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/lgoo.png';
+import Container from '../ui/Container';
 
 interface INavLinkProps {
   link: string;
@@ -15,24 +17,20 @@ const Footer = () => {
   return (
     <>
       <footer className="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
-        <div className="container mx-auto">
+        <Container>
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
               <div className="w-full mb-10">
                 <a href="/#" className="mb-6 inline-block max-w-[160px]">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg"
-                    alt="logo"
-                    className="max-w-full"
-                  />
+                  <img src={logo} alt="logo" className="max-w-full" />
                 </a>
-                <p className="text-base mb-7 text-body-color">
+                <p className="text-base mb-7">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Repellat ducimus reiciendis porro modi. Mollitia consectetur
-                  nulla aut inventore cumque iure!
+                  nulla aut inventore cumque!
                 </p>
                 <p className="flex items-center text-sm font-medium text-black">
-                  <span className="mr-3 text-violet-600">
+                  <span className="mr-3 text-indigo-600">
                     <svg
                       width={19}
                       height={21}
@@ -56,7 +54,7 @@ const Footer = () => {
               <NavLink link="/userStrategy" label="User Strategy" />
             </LinkGroup>
             <LinkGroup header="Company">
-              <NavLink link="/about" label="About TailGrids" />
+              <NavLink link="/about" label="About Boake" />
               <NavLink link="/contact" label="Contact & Support" />
               <NavLink link="/success" label="Success History" />
               <NavLink link="/setting" label="Setting & Privacy" />
@@ -76,7 +74,7 @@ const Footer = () => {
                 <div className="flex items-center mb-6">
                   <a
                     href="/#"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-violet-600 hover:bg-violet-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-indigo-600 hover:bg-indigo-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width={8}
@@ -89,7 +87,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/#"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-violet-600 hover:bg-violet-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-indigo-600 hover:bg-indigo-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width={16}
@@ -102,7 +100,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/#"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-violet-600 hover:bg-violet-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-indigo-600 hover:bg-indigo-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width={16}
@@ -115,7 +113,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/#"
-                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-violet-600 hover:bg-violet-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                    className="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-black hover:border-indigo-600 hover:bg-indigo-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                   >
                     <svg
                       width={14}
@@ -127,14 +125,26 @@ const Footer = () => {
                     </svg>
                   </a>
                 </div>
+                <div className="hidden lg:block mb-4">
+                  <h2 className="font-semibold mb-3">Subscribe</h2>
+                  <div className="flex">
+                    <input
+                      className="border py-1 px-2 border-gray-100 focus:outline-primary"
+                      type="text"
+                    />
+                    <button className="py-1 px-2 bg-primary text-white border border-gray-100">
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
                 <p className="text-base text-body-color">
                   {' '}
-                  © {new Date().getFullYear()} TailGrids{' '}
+                  © {new Date().getFullYear()} Boake{' '}
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </Container>
         <div>
           <span className="absolute left-0 bottom-0 z-[-1]">
             <svg
@@ -217,7 +227,7 @@ const NavLink = ({ link, label }: INavLinkProps) => {
       <li>
         <Link
           to={link}
-          className={`inline-block mb-2 text-base leading-loose text-body-color hover:text-violet-600`}
+          className={`inline-block mb-2 text-base leading-loose text-body-color hover:text-indigo-600`}
         >
           {label}
         </Link>

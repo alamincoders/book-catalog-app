@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const ErrorPage = () => {
   return (
     <>
-      <section className="relative z-10 bg-violet-600 py-[120px] h-screen">
+      <section className="relative z-10 bg-indigo-600 py-[120px] h-screen">
         <div className="container mx-auto">
           <div className="flex -mx-4">
             <div className="w-full px-4">
@@ -19,7 +19,7 @@ const ErrorPage = () => {
                 </p>
                 <Link
                   to="/"
-                  className="inline-block px-8 py-3 text-base font-semibold text-center text-white transition border border-white rounded-lg hover:bg-white hover:text-violet-600"
+                  className="inline-block px-8 py-3 text-base font-semibold text-center text-white transition border border-white rounded-lg hover:bg-white hover:text-indigo-600"
                 >
                   Go to Home
                 </Link>

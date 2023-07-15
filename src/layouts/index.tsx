@@ -1,24 +1,22 @@
-import React, { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from '../components/shared/Footer';
 import Navbar from '../components/shared/Navbar';
 
-interface IProps {
-  children: ReactNode;
-}
-
-const Layout = ({ children }: IProps) => {
+const Layout = () => {
   return (
-    <React.Fragment>
+    <div>
       <header>
-        <nav>
-          <Navbar />
-        </nav>
+        <Navbar />
       </header>
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
+
+      {/* footer */}
       <footer>
         <Footer />
       </footer>
-    </React.Fragment>
+    </div>
   );
 };
 
