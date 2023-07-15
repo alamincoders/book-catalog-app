@@ -15,23 +15,23 @@ module.exports = {
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
-      primary: "#5850E6",
-      secondary: "#ff7e33",
-      info: "#0C63E7",
+      primary: '#5850E6',
+      secondary: '#ff7e33',
+      info: '#0C63E7',
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
       gray: {
-        50: "#FAFAFC",
-        100: "#E9E9EC",
-        200: "#C6C8CD",
-        300: "#ACAEB6",
-        400: "#92959F",
-        500: "#777C87",
-        600: "#5D6370",
-        700: "#434959",
-        800: "#293041",
-        900: "#0f172a",
+        50: '#FAFAFC',
+        100: '#E9E9EC',
+        200: '#C6C8CD',
+        300: '#ACAEB6',
+        400: '#92959F',
+        500: '#777C87',
+        600: '#5D6370',
+        700: '#434959',
+        800: '#293041',
+        900: '#0f172a',
       },
       zinc: colors.zinc,
       neutral: colors.neutral,
@@ -144,13 +144,17 @@ module.exports = {
     backgroundImage: {
       none: 'none',
       'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
-      'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
+      'gradient-to-tr':
+        'linear-gradient(to top right, var(--tw-gradient-stops))',
       'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-      'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
+      'gradient-to-br':
+        'linear-gradient(to bottom right, var(--tw-gradient-stops))',
       'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
-      'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
+      'gradient-to-bl':
+        'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
-      'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'gradient-to-tl':
+        'linear-gradient(to top left, var(--tw-gradient-stops))',
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {
@@ -377,7 +381,14 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: [
+        'ui-serif',
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif',
+      ],
       mono: [
         'ui-monospace',
         'SFMono-Regular',
@@ -873,7 +884,8 @@ module.exports = {
       all: 'all',
       DEFAULT:
         'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-      colors: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+      colors:
+        'color, background-color, border-color, text-decoration-color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
       transform: 'transform',
@@ -965,4 +977,4 @@ module.exports = {
     'disabled',
   ],
   plugins: [],
-}
+};
