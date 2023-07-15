@@ -30,7 +30,7 @@ const Hero = () => {
                       to="allbooks"
                       className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-white rounded-lg bg-indigo-600 hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
                     >
-                      All Books
+                      Get All Books
                     </Link>
                   </li>
                   <li>

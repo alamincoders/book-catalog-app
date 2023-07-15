@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import Hero from '../components/screen/Hero';
+import TopBooks from '../components/screen/TopBooks';
+import TrendyBooks from '../components/screen/TrendyBooks';
 
 const Home = () => {
   useEffect(() => {
@@ -13,6 +15,8 @@ const Home = () => {
         <title>Book Store - Home</title>
       </Helmet>
       <Hero />
+      <TrendyBooks />
+      <TopBooks />
     </>
   );
 };
