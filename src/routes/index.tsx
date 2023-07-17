@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts';
 import Home from '../pages/App';
 import BookDetails from '../pages/BookDetails';
+import Books from '../pages/Books';
 import ErrorPage from '../pages/ErrorPage';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />,
+      },
+      {
+        path: '/allbooks',
+        element: <Books />,
       },
       {
         path: '/book/:id',
