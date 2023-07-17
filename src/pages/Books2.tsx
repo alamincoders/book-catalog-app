@@ -4,17 +4,20 @@ import {
   FunnelIcon,
   MinusIcon,
   PlusIcon,
-  Squares2X2Icon,
 } from '@heroicons/react/20/solid';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment, useState } from 'react';
+import FilterBooks from '../components/screen/FilterBooks';
 import BookCard from '../components/shared/BookCard';
+import CustomDateRangePicker from '../components/shared/DatePicker';
+import Pagination from '../components/shared/Pagination';
 import { useGetAllBooksQuery } from '../redux/features/books/bookApi';
 import { IBook } from '../types/globalTypes';
 
 const sortOptions = [
   { name: 'Any Time', href: '/', current: true },
   { name: 'Past 24 Hours', href: '/', current: false },
+  { name: 'Past Month', href: '/', current: false },
 ];
 
 const subCategories = [
@@ -24,38 +27,19 @@ const subCategories = [
 ];
 const filters = [
   {
-    id: 'color',
-    name: 'Color',
+    id: 'genre',
+    name: 'Genre',
     options: [
-      { value: 'white', label: 'White', checked: false },
-      { value: 'beige', label: 'Beige', checked: false },
-      { value: 'blue', label: 'Blue', checked: true },
-      { value: 'brown', label: 'Brown', checked: false },
-      { value: 'green', label: 'Green', checked: false },
-      { value: 'purple', label: 'Purple', checked: false },
-    ],
-  },
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
-    ],
-  },
-  {
-    id: 'size',
-    name: 'Size',
-    options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
+      { value: 'Mystery', label: 'Mystery', checked: false },
+      { value: 'Horror', label: 'Horror', checked: false },
+      { value: 'Fantasy', label: 'Fantasy', checked: true },
+      { value: 'Science Fiction', label: 'Science Fiction', checked: false },
+      { value: 'Romance', label: 'Romance', checked: false },
+      {
+        value: 'Historical Fiction',
+        label: 'Historical Fiction',
+        checked: false,
+      },
     ],
   },
 ];
@@ -64,7 +48,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Books() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const { data: books, isLoading } = useGetAllBooksQuery({});
 
@@ -197,8 +181,8 @@ export default function Example() {
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              New Arrivals
+            <h1 className=" text-2xl lg:text-4xl font-bold tracking-tight text-gray-900">
+              Our Books
             </h1>
 
             <div className="flex items-center">
@@ -242,21 +226,11 @@ export default function Example() {
                           )}
                         </Menu.Item>
                       ))}
-                      <button className="text-gray-500 px-4 py-2 text-sm hover:text-gray-900">
-                        Custom Range
-                      </button>
                     </div>
                   </Menu.Items>
                 </Transition>
               </Menu>
 
-              <button
-                type="button"
-                className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-              >
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-              </button>
               <button
                 type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -277,6 +251,10 @@ export default function Example() {
               {/* Filters */}
               <form className="hidden lg:block">
                 <h3 className="sr-only">Categories</h3>
+                {/* search by genre and author */}
+                <FilterBooks />
+                {/* =============================================================================== */}
+                {/* =============================================================================== */}
                 <ul
                   role="list"
                   className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
@@ -287,7 +265,8 @@ export default function Example() {
                     </li>
                   ))}
                 </ul>
-
+                {/* =============================================================================== */}
+                {/* =============================================================================== */}
                 {filters.map((section) => (
                   <Disclosure
                     as="div"
@@ -297,7 +276,7 @@ export default function Example() {
                     {({ open }) => (
                       <>
                         <h3 className="-my-3 flow-root">
-                          <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
+                          <Disclosure.Button className="flex w-full items-center justify-between bg-white lg:bg-transparent py-3 text-sm text-gray-400 hover:text-gray-500">
                             <span className="font-medium text-gray-900">
                               {section.name}
                             </span>
@@ -345,8 +324,15 @@ export default function Example() {
                     )}
                   </Disclosure>
                 ))}
+                {/* =============================================================================== */}
+                {/* =============================================================================== */}
+                <div className="mt-5">
+                  <h4 className="font-medium">Publication Date: </h4>
+                  <CustomDateRangePicker />
+                </div>
               </form>
-
+              {/* =============================================================================== */}
+              {/* =============================================================================== */}
               {/* Product grid */}
               <div className="lg:col-span-3">
                 {isLoading ? (
@@ -374,6 +360,9 @@ export default function Example() {
                     )}
                   </div>
                 )}
+                <div>
+                  <Pagination />
+                </div>
               </div>
             </div>
           </section>

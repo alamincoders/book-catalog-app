@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import FilterBooks from '../components/screen/FilterBooks';
 import BookCard from '../components/shared/BookCard';
+import CustomDateRangePicker from '../components/shared/DatePicker';
 import Container from '../components/ui/Container';
 import { useGetAllBooksQuery } from '../redux/features/books/bookApi';
 import { IBook } from '../types/globalTypes';
-import CustomDateRangePicker from '../components/shared/DatePicker';
 
 const Books = () => {
   const { data: books, isLoading } = useGetAllBooksQuery({});
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -34,10 +34,7 @@ const Books = () => {
           </div>
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8">
-              <div className="">
-                <FilterBooks />
-                <CustomDateRangePicker/>
-              </div>
+            
               <div className="lg:col-span-3 ">
                 {isLoading ? (
                   'Loading'

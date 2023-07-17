@@ -15,23 +15,29 @@ const CustomDateRangePicker: React.FC = () => {
   };
 
   return (
-    <div>
-      <DatePicker
-        selected={startDate}
-        onChange={handleStartDateChange}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-        placeholderText="Start Date"
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={handleEndDateChange}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        placeholderText="End Date"
-      />
+    <div className="flex flex-col gap-4">
+      <div>
+        <h4 className=" text-gray-300">Start Date:</h4>
+        <DatePicker
+          selected={startDate}
+          onChange={handleStartDateChange}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          placeholderText="Start Date"
+        />
+      </div>
+      <div>
+        <h4 className=" text-gray-300">End Date:</h4>
+        <DatePicker
+          selected={endDate}
+          onChange={handleEndDateChange}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          placeholderText="End Date"
+        />
+      </div>
     </div>
   );
 };
