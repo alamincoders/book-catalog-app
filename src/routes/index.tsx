@@ -3,10 +3,10 @@ import Layout from '../layouts';
 import Home from '../pages/App';
 import BookDetails from '../pages/BookDetails';
 import Books from '../pages/Books2';
+import BookForm from '../pages/CreateBook';
 import ErrorPage from '../pages/ErrorPage';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
-import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,10 +37,14 @@ const router = createBrowserRouter([
       {
         path: '/book/:id',
         element: (
-          <PrivateRoute>
-            <BookDetails />
-          </PrivateRoute>
+          // <PrivateRoute>
+          <BookDetails />
+          // </PrivateRoute>
         ),
+      },
+      {
+        path: '/createbook',
+        element: <BookForm />,
       },
     ],
   },

@@ -71,14 +71,25 @@ const Navbar = () => {
                         <span>All Books</span>
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="about"
-                        className="block md:px-4 transition hover:text-primary"
-                      >
-                        <span>About</span>
-                      </Link>
-                    </li>
+                    {!email ? (
+                      <li>
+                        <Link
+                          to="createbook"
+                          className="block md:px-4 transition hover:text-primary"
+                        >
+                          <span>Create Book</span>
+                        </Link>
+                      </li>
+                    ) : (
+                      <li>
+                        <Link
+                          to="about"
+                          className="block md:px-4 transition hover:text-primary"
+                        >
+                          <span>About</span>
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <Link
                         to="contact"
