@@ -1,18 +1,29 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from '../features/api/apiSlice';
-import booksReducer from '../features/books/bookSlice';
-// ...
+import authReducer from '../features/auth/authSlice';
+
+import Cookies from 'js-cookie';
+import jwtDecode from 'jwt-decode';
+
+const accessToken = Cookies.get('accessToken');
+const decoded = accessToken
+  ? jwtDecode<{ email: string; name: string }>(accessToken)
+  : null;
 
 export const store = configureStore({
   reducer: {
-    books: booksReducer,
+    auth: authReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
+  },
+  preloadedState: {
+    auth: {
+      name: decoded ? decoded.name : null,
+      email: decoded ? decoded.email : null,
+    },
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

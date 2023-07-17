@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layouts';
 import Home from '../pages/App';
+import BookDetails from '../pages/BookDetails';
 import ErrorPage from '../pages/ErrorPage';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
@@ -27,18 +28,14 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />,
       },
-      /*  {
-        path: '/contact',
-        element: <Contact />,
-      },
       {
-        path: '/about',
-        element: <About />,
+        path: '/book/:id',
+        element: (
+          // <PrivateRoute>
+          <BookDetails />
+          // </PrivateRoute>
+        ),
       },
-      {
-        path: '/service',
-        element: <Services />,
-      }, */
     ],
   },
 ]);

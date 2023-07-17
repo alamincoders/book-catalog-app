@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/lgoo.png';
 import Container from '../ui/Container';
+import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
+import { userLoggedOut } from '../../redux/features/auth/authSlice';
 
 const Navbar = () => {
-  const user = {
-    email: '',
-  };
+  const { email } = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -97,7 +98,7 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {!user.email ? (
+                {!email ? (
                   <div className="mt-12 lg:mt-0 flex space-x-4">
                     <Link
                       to="login"
@@ -118,14 +119,14 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <div className="mt-12 lg:mt-0 flex space-x-4">
-                    <Link
-                      to="login"
+                    <button
+                      onClick={() => dispatch(userLoggedOut())}
                       className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-white before:border text-black before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                     >
                       <span className="relative text-sm font-semibold">
-                        User
+                        Logout
                       </span>
-                    </Link>{' '}
+                    </button>
                   </div>
                 )}
               </div>

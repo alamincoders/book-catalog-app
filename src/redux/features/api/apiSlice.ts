@@ -1,15 +1,10 @@
 // Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import customFetchBase from './customFetchBase';
 
-// Define a service using a base URL and expected endpoints
 export const apiSlice = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'https://jsonplaceholder.typicode.com/',
-  }),
+  baseQuery: customFetchBase,
+  tagTypes: ['Book', 'User'],
   endpoints: () => ({}),
 });
-
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const {} = apiSlice;
