@@ -83,7 +83,7 @@ const BookForm: React.FC = () => {
             Publication Date
           </label>
           <input
-            type="text"
+            type="datetime-local"
             id="publicationDate"
             name="publicationDate"
             value={book.publicationDate}

@@ -71,7 +71,7 @@ const Navbar = () => {
                         <span>All Books</span>
                       </Link>
                     </li>
-                    {!email ? (
+                    {email ? (
                       <li>
                         <Link
                           to="createbook"
