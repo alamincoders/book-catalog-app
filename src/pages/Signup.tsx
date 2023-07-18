@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { string, TypeOf, z, ZodType } from 'zod';
 import logo from '../assets/lgoo.png';
@@ -43,6 +43,7 @@ const registerSchema: ZodType<IUser> = z
 export type RegisterInput = TypeOf<typeof registerSchema>;
 
 const Signup = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -56,12 +57,19 @@ const Signup = () => {
 
   const onSubmit = (data: RegisterInput) => {
     registerUser(data);
+    navigate('/login');
   };
   if (isSuccess) {
-    toast.success(data?.message);
+    toast.success(data?.message, {
+      autoClose: 2000,
+      toastId: Math.random(),
+    });
   }
   if (isError) {
-    toast.error('invalid credentials');
+    toast.error('invalid credentials', {
+      autoClose: 2000,
+      toastId: Math.random(),
+    });
   }
 
   return (
@@ -379,15 +387,3 @@ const Signup = () => {
 
 export default Signup;
 
-// const InputBox = ({ type, placeholder, name }: IInputBox) => {
-//   return (
-//     <div className="mb-6">
-//       <input
-//         type={type}
-//         placeholder={placeholder}
-//         name={name}
-//         className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-indigo-600 focus-visible:shadow-none"
-//       />
-//     </div>
-//   );
-// };

@@ -34,3 +34,20 @@ export interface ILogin {
   email: string;
   password: string;
 }
+
+
+export interface IBook {
+  author?: string;
+  title: string;
+  genre: string;
+  publicationDate: Date | null;
+}
+
+export interface IBookComment {
+  bookId?: string;
+  comment: string;
+}
+
+export interface IBookCommentResponse extends GenericResponse<IBookComment> {}
+
+export interface IBookResponse extends GenericResponse<IBook> {}

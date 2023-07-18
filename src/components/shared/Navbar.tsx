@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/lgoo.png';
+import Container from '../ui/Container';
 import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
 import { userLoggedOut } from '../../redux/features/auth/authSlice';
-import Container from '../ui/Container';
 
 const Navbar = () => {
   const { email } = useAppSelector((state) => state.auth);
@@ -71,25 +71,14 @@ const Navbar = () => {
                         <span>All Books</span>
                       </Link>
                     </li>
-                    {email ? (
-                      <li>
-                        <Link
-                          to="createbook"
-                          className="block md:px-4 transition hover:text-primary"
-                        >
-                          <span>Create Book</span>
-                        </Link>
-                      </li>
-                    ) : (
-                      <li>
-                        <Link
-                          to="about"
-                          className="block md:px-4 transition hover:text-primary"
-                        >
-                          <span>About</span>
-                        </Link>
-                      </li>
-                    )}
+                    <li>
+                      <Link
+                        to="about"
+                        className="block md:px-4 transition hover:text-primary"
+                      >
+                        <span>About</span>
+                      </Link>
+                    </li>
                     <li>
                       <Link
                         to="contact"
@@ -105,17 +94,7 @@ const Navbar = () => {
                       >
                         <span>Blog</span>
                       </Link>
-                    </li>{' '}
-                    {email && (
-                      <li>
-                        <Link
-                          to="createbook"
-                          className="block md:px-4 transition hover:text-primary"
-                        >
-                          <span>Create Book</span>
-                        </Link>
-                      </li>
-                    )}
+                    </li>
                   </ul>
                 </div>
 
@@ -148,6 +127,16 @@ const Navbar = () => {
                         Logout
                       </span>
                     </button>
+                    <div>
+                      <Link
+                        to="createbook"
+                        className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-white before:border text-black before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                      >
+                        <span className="relative text-sm font-semibold">
+                          Create Book
+                        </span>
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
