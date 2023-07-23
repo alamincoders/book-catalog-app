@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
 interface IBookProps {
   image: string;
   BookTitle: string;
@@ -28,7 +27,7 @@ const BookCard = ({
           <h3>
             <Link
               to={titleHref ? titleHref : '/'}
-              className="block text-md font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+              className="block text-md font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] capitalize"
             >
               {BookTitle}
             </Link>
