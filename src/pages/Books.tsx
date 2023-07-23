@@ -1,5 +1,5 @@
 import { Transition, Listbox } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import FilterBooks from '../components/screen/FilterBooks';
 import BookCard from '../components/shared/BookCard';
 import CustomDateRangePicker from '../components/shared/DatePicker';
@@ -29,6 +29,8 @@ export default function Books() {
   const [selectedGenre, setSelectedGenre] = useState<string | undefined>(
     undefined
   );
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
 
   // Convert Date objects to formatted strings
   const formattedFromDate = fromDate
@@ -38,12 +40,26 @@ export default function Books() {
     ? moment(toDate).format('MM/DD/YYYY')
     : undefined;
 
-  const { data: books } = useGetAllBooksQuery({
+  const { data: booksData } = useGetAllBooksQuery({
     searchTerm,
     fromDate: formattedFromDate,
     toDate: formattedToDate,
     genre: selectedGenre,
+    page: currentPage,
+    limit: 10,
   });
+
+  // Extract the books and total pages from the API response
+  const books = booksData?.data || [];
+
+  useEffect(() => {
+    // Update the total pages when the API response changes
+    setTotalPages(Math.ceil((booksData?.meta.total || 1) / 2));
+  }, [booksData]);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="bg-[#F3F4F6]">
@@ -61,10 +77,10 @@ export default function Books() {
             <h2 id="products-heading" className="sr-only">
               Products
             </h2>
-            <div className="flex m-5">
+            <div className="flex my-5">
               <Listbox value={selectedGenre} onChange={setSelectedGenre}>
-                <div className="relative mt-1 w-[250px]">
-                  <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <div className="relative mt-1 w-[280px]">
+                  <Listbox.Button className="relative w-full cursor-default rounded-sm py-2 pl-3 pr-10 text-left border focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                     <span className="block truncate">
                       {selectedGenre ?? 'Select Genre'}
                     </span>
@@ -81,7 +97,7 @@ export default function Books() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                       {filters.map((section) => (
                         <Fragment key={section.id}>
                           <Listbox.Option
@@ -158,14 +174,14 @@ export default function Books() {
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
-              <form className="hidden lg:block">
+              <form className="lg:block">
                 <h3 className="sr-only">Categories</h3>
                 {/* search by genre and author */}
                 <FilterBooks
                   searchTerm={searchTerm}
                   setSearchTerm={setSearchTerm}
                 />
-           
+
                 <div className="mt-5">
                   <h4 className="font-medium">Publication Date: </h4>
                   <CustomDateRangePicker
@@ -179,9 +195,9 @@ export default function Books() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                {books?.data.length ? (
+                {books.length ? (
                   <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8">
-                    {books.data.map(
+                    {books.map(
                       ({
                         _id,
                         title,
@@ -205,7 +221,11 @@ export default function Books() {
                   <p>No data is present.</p>
                 )}
                 <div>
-                  <Pagination />
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
                 </div>
               </div>
             </div>
