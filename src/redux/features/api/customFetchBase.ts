@@ -7,8 +7,8 @@ import {
 import { Mutex } from 'async-mutex';
 import { userLoggedOut } from '../auth/authSlice';
 
-// const baseUrl = import.meta.env.VITE_APP_SERVER_URL;
-const baseUrl = 'http://localhost:5000/api/v1/';
+const baseUrl = import.meta.env.VITE_APP_SERVER_URL;
+// const baseUrl = 'http://localhost:5000/api/v1/';
 
 const mutex = new Mutex();
 
