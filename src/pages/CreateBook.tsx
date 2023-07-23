@@ -1,16 +1,15 @@
-import React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, Controller } from 'react-hook-form';
-import { TypeOf, z, ZodType } from 'zod';
-import { genreOptions } from '../types/globalTypes';
-import { IBook } from '../redux/features/api/type';
+import moment from 'moment';
+import React from 'react';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import moment from 'moment';
-import { useCreateBookMutation } from '../redux/features/books/bookApi';
-import { toast } from 'react-toastify';
+import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
+import { TypeOf, ZodType, z } from 'zod';
+import { IBook } from '../redux/features/api/type';
+import { useCreateBookMutation } from '../redux/features/books/bookApi';
+import { genreOptions } from '../types/globalTypes';
 
 const createbookSchema: ZodType<IBook> = z.object({
   title: z.string().min(3, { message: 'Title must be at least 3 characters' }),
@@ -29,7 +28,6 @@ const createbookSchema: ZodType<IBook> = z.object({
 });
 export type CreateBookInput = TypeOf<typeof createbookSchema>;
 const BookForm: React.FC = () => {
-  
   const navigate = useNavigate();
 
   const {
@@ -40,8 +38,6 @@ const BookForm: React.FC = () => {
   } = useForm<CreateBookInput>({
     resolver: zodResolver(createbookSchema),
   });
-
- 
 
   const [createBook, { data, isLoading, isSuccess, isError }] =
     useCreateBookMutation();
@@ -70,7 +66,7 @@ const BookForm: React.FC = () => {
   };
 
   return (
-    <div className="pt-20 pb-10 lg:pb-20 h-full bg-[#F3F4F6]">
+    <div className="pt-20 pb-10 lg:pb-20 h-screen bg-[#F3F4F6]">
       <div className="text-zinc-800 text-sm pb-10 text-center overflow-hidden">
         <h2 className="text-4xl font-semibold mb-3 ">Create Your Book</h2>
         <p className="text-zinc-600 mb-3 lg:mx-96">
@@ -147,7 +143,7 @@ const BookForm: React.FC = () => {
             </span>
           )}
         </div>
-        <div className="flex justify-center">
+        <div className=" mt-10">
           <button
             type="submit"
             disabled={isLoading || isSuccess}
