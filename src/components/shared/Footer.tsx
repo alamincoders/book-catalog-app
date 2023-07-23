@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/lgoo.png';
+import logo from '../../assets/logo.png';
 import Container from '../ui/Container';
 
 interface INavLinkProps {

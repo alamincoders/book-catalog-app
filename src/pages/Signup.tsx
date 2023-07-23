@@ -2,8 +2,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { string, TypeOf, z, ZodType } from 'zod';
-import logo from '../assets/lgoo.png';
+import { TypeOf, ZodType, string, z } from 'zod';
+import logo from '../assets/logo.png';
 import { IUser } from '../redux/features/api/type';
 import { useRegisterUserMutation } from '../redux/features/auth/authApi';
 
@@ -386,4 +386,3 @@ const Signup = () => {
 };
 
 export default Signup;
-

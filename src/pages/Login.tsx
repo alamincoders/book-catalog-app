@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { TypeOf, ZodType, string, z } from 'zod';
-import logo from '../assets/lgoo.png';
+import logo from '../assets/logo.png';
 import { useAppSelector } from '../redux/app/hooks';
 import { ILogin } from '../redux/features/api/type';
 import { useLoginUserMutation } from '../redux/features/auth/authApi';

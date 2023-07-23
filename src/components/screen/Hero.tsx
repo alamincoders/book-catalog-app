@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import heroBooks from '../../assets/books/slider_top_2.png';
+import heroBooks from '../../assets/hero.png';
 import Container from '../ui/Container';
 
 interface ISingleImageProps {
@@ -28,7 +28,7 @@ const Hero = () => {
                   <li>
                     <Link
                       to="allbooks"
-                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-white rounded-lg bg-indigo-600 hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
+                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-white rounded-lg bg-primary hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10"
                     >
                       Get All Books
                     </Link>
@@ -36,7 +36,7 @@ const Hero = () => {
                   <li>
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-body-color hover:text-indigo-600 sm:px-10 lg:px-8 xl:px-10"
+                      className="inline-flex items-center justify-center px-6 py-4 text-base font-normal text-center text-body-color hover:text-primary sm:px-10 lg:px-8 xl:px-10"
                     >
                       <span className="mr-2">
                         <svg
@@ -46,7 +46,7 @@ const Hero = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <circle cx="11" cy="11" r="11" fill="#3056D3" />
+                          <circle cx="11" cy="11" r="11" fill="#E58C23" />
                           <rect
                             x="6.90906"
                             y="13.3636"
