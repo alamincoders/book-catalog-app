@@ -6,10 +6,10 @@ import Books from '../pages/Books';
 import BookForm from '../pages/CreateBook';
 import ErrorPage from '../pages/ErrorPage';
 import Login from '../pages/Login';
-import Signup from '../pages/Signup';
-import PrivateRoute from './PrivateRoute';
-import UpdateBook from '../pages/UpdateBook';
 import Profile from '../pages/Profile';
+import Signup from '../pages/Signup';
+import UpdateBook from '../pages/UpdateBook';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {

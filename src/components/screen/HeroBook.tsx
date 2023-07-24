@@ -45,11 +45,11 @@ const HeroBook = () => {
           33% OFF
         </span>
       </div>
-      <div>
-        <Link to="/">
+      <div className='space-x-6'>
+        <Link to="/allbooks">
           <PrimaryButton>All Books</PrimaryButton>
         </Link>{' '}
-        <Link to="/">
+        <Link to="/allbooks">
           <SecondaryButton>See Details</SecondaryButton>
         </Link>
       </div>

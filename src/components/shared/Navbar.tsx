@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
 import { userLoggedOut } from '../../redux/features/auth/authSlice';
+import { PrimaryButton, SecondaryButton } from '../ui/Button';
 import Container from '../ui/Container';
 
 const Navbar = () => {
@@ -70,7 +71,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/wishlist"
-                        className="flex items-center hover:bg-slate-50 text-black cursor-pointer relative p-3 rounded-md transition duration-200 ease-in-out"
+                        className="flex items-center bg-slate-200/60 hover:bg-slate-100 text-black cursor-pointer relative p-3 rounded-md transition duration-200 ease-in-out"
                       >
                         <svg
                           fill=""
@@ -88,7 +89,7 @@ const Navbar = () => {
                     </li>{' '}
                     <Link to="/reading">
                       {' '}
-                      <li className="flex items-center hover:bg-slate-50 text-black cursor-pointer relative p-3 rounded-md transition duration-200 ease-in-out">
+                      <li className="flex items-center bg-slate-200/60 hover:bg-slate-100 text-black cursor-pointer relative p-3 rounded-md transition duration-200 ease-in-out">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -114,21 +115,11 @@ const Navbar = () => {
 
                 {!email ? (
                   <div className="mt-12 lg:mt-0 flex space-x-4">
-                    <Link
-                      to="/login"
-                      className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-white before:border text-black before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                    >
-                      <span className="relative text-sm font-semibold">
-                        Sign In
-                      </span>
+                    <Link to="/login">
+                      <SecondaryButton>Sign In</SecondaryButton>
                     </Link>{' '}
-                    <Link
-                      to="/signup"
-                      className="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                    >
-                      <span className="relative text-sm font-semibold text-white">
-                        Sing Up
-                      </span>
+                    <Link to="/signup">
+                      <PrimaryButton>Sign Up</PrimaryButton>
                     </Link>
                   </div>
                 ) : (

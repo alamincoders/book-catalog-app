@@ -24,7 +24,7 @@ const Hero = () => {
                     <span className="ml-2 inline-block h-[1px] w-8 bg-body-color"></span>
                   </h6>
 
-                  <div className="flex items-center space-x-4 grayscale ">
+                  <div className="flex items-center space-x-4 grayscale blur-[2px] ">
                     <SingleImage
                       href="#"
                       imgSrc="https://cdn.tailgrids.com/2.0/image/assets/images/brands/ayroui.svg"

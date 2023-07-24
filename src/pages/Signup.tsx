@@ -93,7 +93,7 @@ const Signup = () => {
                       type="text"
                       placeholder="Enter name"
                       {...register('name')}
-                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-indigo-600 focus-visible:shadow-none"
+                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                     {errors.name?.message && (
                       <p>{errors.name?.message as string}</p>
@@ -104,7 +104,7 @@ const Signup = () => {
                     <input
                       type="email"
                       placeholder="Enter Your Email"
-                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-indigo-600 focus-visible:shadow-none"
+                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                       {...register('email')}
                     />
                     {errors.email?.message && (
@@ -116,7 +116,7 @@ const Signup = () => {
                       type="password"
                       placeholder="Enter Password"
                       {...register('password')}
-                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-indigo-600 focus-visible:shadow-none"
+                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                     {errors.password?.message && (
                       <p>{errors.password?.message as string}</p>
@@ -127,7 +127,7 @@ const Signup = () => {
                       type="password"
                       placeholder="Enter Confirm Password"
                       {...register('confirmPassword')}
-                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-indigo-600 focus-visible:shadow-none"
+                      className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
 
                     {errors.confirmPassword?.message && (
@@ -138,7 +138,7 @@ const Signup = () => {
                   <button
                     type="submit"
                     disabled={isLoading || isSuccess}
-                    className="mt-6 w-full inline-block text-base font-semibold rounded-md bg-indigo-600 text-white py-3 px-5 hover:bg-indigo-700 transition duration-200"
+                    className="mt-6 w-full inline-block text-base font-semibold rounded-md bg-primary text-white py-3 px-5 hover:bg-indigo-700 transition duration-200"
                   >
                     Submit Now
                   </button>
@@ -146,14 +146,14 @@ const Signup = () => {
 
                 <Link
                   to="/terms"
-                  className="mb-2 inline-block text-base text-[#adadad] hover:text-indigo-600 hover:underline"
+                  className="mb-2 inline-block text-base text-[#adadad] hover:text-primary hover:underline"
                 >
                   Terms & Condition
                 </Link>
 
                 <p className="text-base text-[#adadad]">
                   Already have an account?
-                  <Link to="/login" className="text-indigo-600 hover:underline">
+                  <Link to="/login" className="text-primary hover:underline">
                     Sign In
                   </Link>
                 </p>
@@ -172,112 +172,112 @@ const Signup = () => {
                         cy="38.6026"
                         r="1.39737"
                         transform="rotate(-90 1.39737 38.6026)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="1.39737"
                         cy="1.99122"
                         r="1.39737"
                         transform="rotate(-90 1.39737 1.99122)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="13.6943"
                         cy="38.6026"
                         r="1.39737"
                         transform="rotate(-90 13.6943 38.6026)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="13.6943"
                         cy="1.99122"
                         r="1.39737"
                         transform="rotate(-90 13.6943 1.99122)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="25.9911"
                         cy="38.6026"
                         r="1.39737"
                         transform="rotate(-90 25.9911 38.6026)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="25.9911"
                         cy="1.99122"
                         r="1.39737"
                         transform="rotate(-90 25.9911 1.99122)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="38.288"
                         cy="38.6026"
                         r="1.39737"
                         transform="rotate(-90 38.288 38.6026)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="38.288"
                         cy="1.99122"
                         r="1.39737"
                         transform="rotate(-90 38.288 1.99122)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="1.39737"
                         cy="26.3057"
                         r="1.39737"
                         transform="rotate(-90 1.39737 26.3057)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="13.6943"
                         cy="26.3057"
                         r="1.39737"
                         transform="rotate(-90 13.6943 26.3057)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="25.9911"
                         cy="26.3057"
                         r="1.39737"
                         transform="rotate(-90 25.9911 26.3057)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="38.288"
                         cy="26.3057"
                         r="1.39737"
                         transform="rotate(-90 38.288 26.3057)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="1.39737"
                         cy="14.0086"
                         r="1.39737"
                         transform="rotate(-90 1.39737 14.0086)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="13.6943"
                         cy="14.0086"
                         r="1.39737"
                         transform="rotate(-90 13.6943 14.0086)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="25.9911"
                         cy="14.0086"
                         r="1.39737"
                         transform="rotate(-90 25.9911 14.0086)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="38.288"
                         cy="14.0086"
                         r="1.39737"
                         transform="rotate(-90 38.288 14.0086)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                     </svg>
                   </span>
@@ -294,84 +294,84 @@ const Signup = () => {
                         cy="25.9912"
                         r="1.39737"
                         transform="rotate(-90 2.288 25.9912)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="14.5849"
                         cy="25.9911"
                         r="1.39737"
                         transform="rotate(-90 14.5849 25.9911)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="26.7216"
                         cy="25.9911"
                         r="1.39737"
                         transform="rotate(-90 26.7216 25.9911)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="2.288"
                         cy="13.6944"
                         r="1.39737"
                         transform="rotate(-90 2.288 13.6944)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="14.5849"
                         cy="13.6943"
                         r="1.39737"
                         transform="rotate(-90 14.5849 13.6943)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="26.7216"
                         cy="13.6943"
                         r="1.39737"
                         transform="rotate(-90 26.7216 13.6943)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="2.288"
                         cy="38.0087"
                         r="1.39737"
                         transform="rotate(-90 2.288 38.0087)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="2.288"
                         cy="1.39739"
                         r="1.39737"
                         transform="rotate(-90 2.288 1.39739)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="14.5849"
                         cy="38.0089"
                         r="1.39737"
                         transform="rotate(-90 14.5849 38.0089)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="26.7216"
                         cy="38.0089"
                         r="1.39737"
                         transform="rotate(-90 26.7216 38.0089)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="14.5849"
                         cy="1.39761"
                         r="1.39737"
                         transform="rotate(-90 14.5849 1.39761)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                       <circle
                         cx="26.7216"
                         cy="1.39761"
                         r="1.39737"
                         transform="rotate(-90 26.7216 1.39761)"
-                        fill="#3056D3"
+                        fill="#E58C23"
                       />
                     </svg>
                   </span>

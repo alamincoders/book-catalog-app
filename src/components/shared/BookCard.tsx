@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import { SecondaryButton } from '../ui/Button';
 
 interface IBookProps {
   image: string;
   BookTitle: string;
   BookAuthor?: string;
-  BookGenre: string;
-  publicationDate: Date | null;
+  BookGenre?: string;
+  publicationDate?: Date | null;
   titleHref: string;
 }
 
@@ -22,14 +23,14 @@ const BookCard = ({
       <div className="">
         <img src={image} alt="" className="w-full h-full object-fill" />
       </div>
-      <div className="p-2  sm:p-3 xl:p-3">
+      <div className="p-2 sm:p-3 xl:p-3 text-center">
         <div>
           <h3>
             <Link
-              to={titleHref ? titleHref : '/'}
-              className="block text-md font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] capitalize"
+              to={titleHref ? `book/${titleHref}` : '/'}
+              className="font-semibold text-secondary"
             >
-              {BookTitle}
+              {BookTitle}...
             </Link>
           </h3>
           <p className="text-base leading-relaxed mb-7 text-body-color">
@@ -41,11 +42,13 @@ const BookCard = ({
           <p> {BookGenre}</p>
           <p>
             {' '}
-            {publicationDate
-              ? new Date(publicationDate).toDateString()
-              : 'Unknown'}
+            {publicationDate ? new Date(publicationDate).toDateString() : null}
           </p>
         </div>
+        <Link to={titleHref ? `book/${titleHref}` : '/'}>
+          {' '}
+          <SecondaryButton>See Details</SecondaryButton>
+        </Link>
       </div>
     </div>
   );
